@@ -15,4 +15,5 @@ python3 github-activity <username>
 - Fork
 - Pull Requests
 
-To render url properly you should have a terminal that supports OSC 8 hyperlinks
+To render urls properly you should have a terminal that supports OSC 8 hyperlinks
+MIT License
