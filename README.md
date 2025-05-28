@@ -16,4 +16,7 @@ python3 github-activity <username>
 - Pull Requests
 
 To render urls properly you should have a terminal that supports OSC 8 hyperlinks
+
+https://roadmap.sh/projects/github-user-activity
+
 MIT License
