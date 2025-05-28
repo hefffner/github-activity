@@ -5,7 +5,7 @@ Simple tool for tracking GitHub user activity
 git clone https://github.com/hefffner/github-activity.git
 python3 github-activity <username>
 ```
-###Available activity
+### Available activity
 - Push
 - Delete
 - Commit
