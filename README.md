@@ -24,17 +24,6 @@ python3 github-activity <username>
 - Pushed 1 commit to hefffner/task_tracker
 ```
 
-### Available activity
-- Push
-- Delete
-- Commit
-- Comment
-- Stars
-- Issues
-- Fork
-- Pull Requests
-- Wiki pages
-
 ***To render URLs properly you should have a terminal that supports OSC 8 hyperlinks***
 
 https://roadmap.sh/projects/github-user-activity
