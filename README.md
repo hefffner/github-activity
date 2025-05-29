@@ -22,8 +22,6 @@ python3 github-activity <username>
 - Pushed 1 commit to hefffner/task_tracker
 - Pushed 1 commit to hefffner/task_tracker
 - Pushed 1 commit to hefffner/task_tracker
-- Created branch: None in hefffner/task_tracker
-- Created repository: None in hefffner/task_tracker
 ```
 
 ### Available activity
