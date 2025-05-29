@@ -1,5 +1,5 @@
 # github-activity CLI
-Simple tool for tracking GitHub user activity
+Simple tool for tracking GitHub user activity with URL rendering in your terminal
 ## Install
 ```bash
 git clone https://github.com/hefffner/github-activity.git
@@ -35,7 +35,7 @@ python3 github-activity <username>
 - Pull Requests
 - Wiki pages
 
-To render urls properly you should have a terminal that supports OSC 8 hyperlinks
+***To render URLs properly you should have a terminal that supports OSC 8 hyperlinks***
 
 https://roadmap.sh/projects/github-user-activity
 
