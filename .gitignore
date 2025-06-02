@@ -1,0 +1,22 @@
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Virtualenv
+venv/
+.venv/
+
+# Env
+.env
+*.env
+
+# IDE
+.vscode/
+.idea/
+
+# Bytecode/compiled
+*.pyo
+*.so
+
+# Logs
+*.log
