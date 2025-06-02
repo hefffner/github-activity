@@ -6,8 +6,20 @@ git clone https://github.com/hefffner/github-activity.git
 python3 github-activity <username>
 ```
 
-## Output
+## Example Output
+
 ```bash
+GitHub activity report for user: hefffner
+=========================================
+- Used languages statistics:
+
+github-activity: 
+Python    : 100.0% ████████████████████
+-------
+
+- Events Statistics:
+=========================================
+
 2025-05-28 11:52 - Pushed 1 commit to hefffner/github-activity
 2025-05-28 11:52 - Pushed 1 commit to hefffner/github-activity
 2025-05-28 11:50 - Pushed 1 commit to hefffner/github-activity
