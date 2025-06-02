@@ -3,7 +3,7 @@ Simple tool for tracking GitHub user activity with URL rendering in your termina
 ## Install
 ```bash
 git clone https://github.com/hefffner/github-activity.git
-python3 github-activity <username>
+python3 -m main <username>
 ```
 
 ## Example Output
@@ -37,4 +37,4 @@ Python    : 100.0% ████████████████████
 
 https://roadmap.sh/projects/github-user-activity
 
-MIT License
+# You can add your GitHub token for authenticated requests in .env file
