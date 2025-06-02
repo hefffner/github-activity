@@ -37,4 +37,4 @@ Python    : 100.0% ████████████████████
 
 https://roadmap.sh/projects/github-user-activity
 
-# You can add your GitHub token for authenticated requests in .env file
+### You can add your GitHub token for authenticated requests in .env file
