@@ -17,16 +17,6 @@ github-activity:
 Python    : 100.0% ████████████████████
 -------
 
-2025-05-28 11:52 - Pushed 1 commit to hefffner/github-activity
-2025-05-28 11:50 - Pushed 1 commit to hefffner/github-activity
-2025-05-28 11:48 - Pushed 1 commit to hefffner/github-activity
-2025-05-28 11:48 - Pushed 1 commit to hefffner/github-activity
-2025-05-28 11:36 - Pushed 1 commit to hefffner/github-activity
-2025-05-28 11:31 - Deleted branch in hefffner/github-activity
-2025-05-28 11:29 - Created branch: CLI tool for tracking GitHub users activity in hefffner/github-activity
-2025-05-28 11:26 - Created repository: CLI tool for tracking GitHub users activity in hefffner/github-activity
-2025-05-28 11:26 - Created branch: CLI tool for tracking GitHub users activity in hefffner/github-activity
-
 - Events Statistics:
 =========================================
 hefffner/github-activity └── 
