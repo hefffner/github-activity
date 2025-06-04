@@ -1,4 +1,7 @@
 import urllib.request, urllib.error, json
+import os
+import hashlib
+import time
 from parse_env import parse_env
 
 env = parse_env()
@@ -13,22 +16,35 @@ else:
     print("API token found")  
 
 def fetch_json(url):
-    req = urllib.request.Request(url, headers=HEADERS)
+    
+    os.makedirs("cache", exist_ok=True)
 
-    try:
-        with urllib.request.urlopen(req) as response:
-            return json.loads(response.read().decode())
-    except urllib.error.HTTPError as e:
-        if e.code == 404:
-            print("User not found")
-        elif e.code == 403:
-            print("Access denied or API limit reached")
-        else:
-            print(f"HTTP error:{e.code}: {e.reason}")
+    hash = hashlib.md5(url.encode()).hexdigest()
+    filename = f"cache/{hash}.json"
 
-    except urllib.error.URLError as e:
-        print(f"Connection error {e.reason}")
-    except json.JSONDecodeError:
-        print("JSON Decode Error")
-    except Exception as e:
-        print(f"Unexpected error: {e}")
+    if os.path.exists(filename) and (time.time() - os.path.getmtime(filename)) < 3600:
+        with open(filename, 'r') as file:
+            return json.load(file)
+    else:
+        req = urllib.request.Request(url, headers=HEADERS)
+
+        try:
+            with urllib.request.urlopen(req) as response:
+                data = json.loads(response.read().decode())
+                with open(filename, 'w') as file:                   
+                    json.dump(data, file)
+                return data
+        except urllib.error.HTTPError as e:
+            if e.code == 404:
+                print("User not found")
+            elif e.code == 403:
+                print("Access denied or API limit reached")
+            else:
+                print(f"HTTP error:{e.code}: {e.reason}")
+
+        except urllib.error.URLError as e:
+            print(f"Connection error {e.reason}")
+        except json.JSONDecodeError:
+            print("JSON Decode Error")
+        except Exception as e:
+            print(f"Unexpected error: {e}")
