@@ -12,8 +12,8 @@ def handle(event, repo, repo_url, time_str):
     comment_body = comments[0].get("body", '')[:50] if comments else ''
     action = payload.get('action')
     if action in ["resolved", "unresolved"]:
-        print(f"{time_str} - Marked review thread as {action} on PR {terminal_link(pr_title, pr_url)}: "
+        print(f"    {time_str} - Marked review thread as {action} on PR {terminal_link(pr_title, pr_url)}: "
               f"{terminal_link(comment_body, comment_url)}")
     else:
-        print(f"{time_str} - Started a review thread on PR {terminal_link(pr_title, pr_url)}: "
+        print(f"    {time_str} - Started a review thread on PR {terminal_link(pr_title, pr_url)}: "
               f"{terminal_link(comment_body, comment_url)}")

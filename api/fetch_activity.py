@@ -5,6 +5,8 @@ from .fetch_languages import fetch_languages_for_repos
 
 from handlers import handlers as event_handlers_map
 
+from utils import terminal_link
+
 
 def fetch_activity(username):
     event_handlers = {
@@ -40,6 +42,9 @@ def fetch_activity(username):
         print("This user has no activity for the past 90 days")
         return
 
+
+    events_by_repo = {}
+
     for event in events:
         repo = event['repo']['name']
         repo_url = f"https://github.com/{repo}"
@@ -47,5 +52,15 @@ def fetch_activity(username):
         time = datetime.strptime(event["created_at"], "%Y-%m-%dT%H:%M:%SZ")
         time_str = time.strftime("%Y-%m-%d %H:%M")
 
-        handler = event_handlers.get(type_, event_handlers_map["default"])
-        handler(event, repo, repo_url, time_str)
+        if repo not in events_by_repo:
+            events_by_repo[repo] = {
+                "url": repo_url,
+                "events": []
+            }
+        events_by_repo[repo]["events"].append((event, type_, time_str))
+
+    for repo, data in events_by_repo.items():
+        print(f"{terminal_link(repo, data["url"])} └── ")
+        for event, type_, time_str in data["events"]:
+            handler = event_handlers.get(type_, event_handlers_map["default"])
+            handler(event, repo, data["url"], time_str)
