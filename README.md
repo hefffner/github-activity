@@ -1,5 +1,5 @@
 # github-activity CLI
-Simple tool for tracking GitHub user activity with URL rendering in your terminal
+Simple tool for tracking GitHub user activity with URL rendering, caching, grouping statistics
 ## Install
 ```bash
 git clone https://github.com/hefffner/github-activity.git
@@ -57,3 +57,4 @@ GITHUB_TOKEN=your_token_here
 Requires: Python 3.8+
 Optional: .env file with GitHub token to avoid rate limits
 
+Supports API responses caching in ``` bash /cache/<md5hash>.json ``` with ttl of 1 hour
