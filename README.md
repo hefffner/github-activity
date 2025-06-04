@@ -57,4 +57,4 @@ GITHUB_TOKEN=your_token_here
 Requires: Python 3.8+
 Optional: .env file with GitHub token to avoid rate limits
 
-Supports API responses caching in ``` bash /cache/<md5hash>.json ``` with ttl of 1 hour
+Supports API responses caching in ``` /cache/<md5hash>.json ``` with ttl of 1 hour
