@@ -9,15 +9,19 @@ def fetch_languages(owner, repo):
 
 def fetch_languages_for_repos(username):
     repos = fetch_repos(username)
-    print("- Used languages statistics:\n=========================================")
-    for repo in repos:
-        languages = fetch_languages(username, repo["name"])
+    if not repos:
+        print("No repositories found for this user.")
+        return
+    else:
+        print("- Used languages statistics:\n=========================================")
+        for repo in repos:
+            languages = fetch_languages(username, repo["name"])
 
-        if not languages:
-            continue
-        total = sum(languages.values())
-        print(terminal_link(repo["name"], repo["html_url"]))
-        for lang, bytes in languages.items():
-            percent = (bytes / total) * 100
-            print(f"{lang:10}: {percent:5.1f}% {bar(percent)}")
-        print("-------")
+            if not languages:
+                continue
+            total = sum(languages.values())
+            print(terminal_link(repo["name"], repo["html_url"]))
+            for lang, bytes in languages.items():
+                percent = (bytes / total) * 100
+                print(f"{lang:10}: {percent:5.1f}% {bar(percent)}")
+            print("-------")
